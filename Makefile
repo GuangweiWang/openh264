@@ -175,7 +175,9 @@ gmp-bootstrap:
 	cd gmp-api && git fetch origin && git checkout $(GMP_API_BRANCH)
 
 gtest-bootstrap:
-	if [ ! -d gtest ] ; then git clone https://github.com/google/googletest.git gtest ; fi
+	if [ ! -d gtest ] ; then git clone https://github.com/google/googletest.git gtest && \
+    cd gtest && git checkout release-1.8.1; fi
+
 
 ifeq ($(HAVE_GTEST),Yes)
 
